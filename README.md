@@ -47,7 +47,7 @@ $ brew install phantomjs
  - [x] Create firts test for 200 with a h1 saying "It works!"
  - [x] Create a rack app which answer 200, "It works!"
  - [x] Create test for 404 when acessing any other path
- - [ ] Change RackApp to answer 404 when not accessing "/"
+ - [x] Change RackApp to answer 404 when not accessing "/"
  - [ ] Create a test to check greeting message on "/welcome"
  - [ ] Add Rack server pages to show pages based on url
  - [ ] Create a test to check greting message using JavaScript, using Poltergeist
