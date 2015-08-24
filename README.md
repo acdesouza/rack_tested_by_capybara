@@ -44,7 +44,7 @@ $ brew install phantomjs
 == Todo
 
  - [x] Config a rake task to test a Rack app
- - [ ] Create firts test for 200 with a h1 saying "It works!"
+ - [x] Create firts test for 200 with a h1 saying "It works!"
  - [ ] Create a rack app which answer 200, "It works!"(inside a h1 tag)
  - [ ] Create test for 404 when acessing any other path
  - [ ] Change RackApp to answer 404 when not accessing "/"
