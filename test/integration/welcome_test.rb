@@ -17,5 +17,16 @@ class WelcomeTest < IntegrationTest
     visit '/not_existing'
     assert_equal 404, page.status_code
   end
-end
 
+  def test_should_greet_user_with_welcome
+    visit '/welcome'
+
+    fill_in('user_name', :with => '')
+    click_button("hello")
+    assert_equal 'Welcome!', find('#greeting').text
+
+    fill_in('user_name', :with => 'AC')
+    click_button("hello")
+    assert_equal 'Welcome, AC!', find('#greeting').text
+  end
+end

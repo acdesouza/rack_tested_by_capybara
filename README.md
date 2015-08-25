@@ -50,5 +50,5 @@ $ brew install phantomjs
  - [x] Change RackApp to answer 404 when not accessing "/"
  - [x] Create a test to check greeting message on "/welcome"
  - [x] Add Rack server pages to show pages based on url
- - [ ] Create a test to check greting message using JavaScript, using Poltergeist
+ - [x] Create a test to check JavaScript's greeting message, using Poltergeist
  - [ ] Add JavaScript greeting message

@@ -9,4 +9,5 @@ gem 'rack-server-pages'
 group :development, :test do
   gem 'minitest'
   gem 'capybara'
+  gem 'poltergeist'
 end
