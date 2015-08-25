@@ -51,4 +51,4 @@ $ brew install phantomjs
  - [x] Create a test to check greeting message on "/welcome"
  - [x] Add Rack server pages to show pages based on url
  - [x] Create a test to check JavaScript's greeting message, using Poltergeist
- - [ ] Add JavaScript greeting message
+ - [x] Add JavaScript greeting message

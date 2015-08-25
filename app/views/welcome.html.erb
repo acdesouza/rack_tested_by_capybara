@@ -1,1 +1,20 @@
-Welcome!
+<h1 id="greeting">Welcome!</h1>
+
+<label for="user[name]">User name: </label>
+<input type="text" id="user_name" name="user[name]" value="" />
+
+<input type="button" id="hello" value="Hello!"/>
+
+<script>
+  var btnHello = document.getElementById("hello");
+  btnHello.addEventListener('click', function(e) {
+      var greetingHeader = document.getElementById("greeting");
+      var userName = document.getElementById("user_name").value;
+
+      if(userName.trim() !== "") {
+        greetingHeader.innerHTML = "Welcome, "+ userName +"!";
+      } else {
+        greetingHeader.innerHTML = "Welcome!";
+      }
+  });
+</script>
