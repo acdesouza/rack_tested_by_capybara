@@ -1,15 +1,15 @@
 require_relative 'boot'
+require 'rack-server-pages'
 
 class RackAppWithCapybara
   def self.application
-    @app = proc do |env|
-      case env['PATH_INFO']
-      when "/"
-        [ 200, {'Content-Type' => 'text/plain'}, ["It works!"] ]
-      else
-        [ 404, {'Content-Type' => 'text/plain'}, ["This is not the page you're looking for..."] ]
+    @app = Rack::Builder.new do
+      use Rack::ServerPages do |config|
+        config.view_path = 'app/views'
       end
-    end
+
+      run Rack::ServerPages::NotFound
+    end.to_app
 
     @app
   end
