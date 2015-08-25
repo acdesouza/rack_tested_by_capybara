@@ -1,8 +1,8 @@
-= Testing Rack app using Capybara
+# Testing Rack app using Capybara
 
 Who to create a Rack app and test it using a headless Capybara.
 
-== Description
+## Description
 
 This application shows a welcome page and change its title, throught JavaScript.
 
@@ -26,7 +26,7 @@ To see the tests running:
 rake test # Or, just rake, since test is the default task.
 ```
 
-== Requirements
+## Requirements
 
 OSX
 
@@ -34,14 +34,14 @@ OSX
 $ brew install phantomjs
 ```
 
-== Sources
+## Sources
 
  - [Rack app HowTo]("https://github.com/rack/rack/wiki/(tutorial)-rackup-howto")
  - [Rack server pages](https://github.com/migrs/rack-server-pages)
  - [Capybara](https://github.com/jnicklas/capybara)
  - [Poltergeist](https://github.com/teampoltergeist/poltergeist)
 
-== Todo
+## Todo
 
  - [x] Config a rake task to test a Rack app
  - [x] Create firts test for 200 with a h1 saying "It works!"
