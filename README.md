@@ -36,7 +36,7 @@ $ brew install phantomjs
 
 ## Sources
 
- - [Rack app HowTo]("https://github.com/rack/rack/wiki/(tutorial)-rackup-howto")
+ - [Rack app HowTo](https://github.com/rack/rack/wiki/(tutorial)-rackup-howto)
  - [Rack from the Beginning](http://hawkins.io/2012/07/rack_from_the_beginning/)
  - [Rack server pages](https://github.com/migrs/rack-server-pages)
  - [Rake TestTask](http://ruby-doc.org/stdlib-2.2.3/libdoc/rake/rdoc/Rake/TestTask.html)
