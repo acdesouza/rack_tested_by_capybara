@@ -1,6 +1,7 @@
 # Testing Rack app using Capybara
+[![Build Status](https://travis-ci.org/acdesouza/rack_tested_by_capybara.svg?branch=master)](https://travis-ci.org/acdesouza/rack_tested_by_capybara)
 
-Who to create a Rack app and test it using a headless Capybara.
+How to create a Rack app and test it using a headless Capybara.
 
 ## Description
 
