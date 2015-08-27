@@ -54,3 +54,4 @@ $ brew install phantomjs
  - [x] Add Rack server pages to show pages based on url
  - [x] Create a test to check JavaScript's greeting message, using Poltergeist
  - [x] Add JavaScript greeting message
+ - [x] Run it on [Travis](https://travis-ci.org)
