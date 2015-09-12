@@ -2,12 +2,25 @@ require_relative 'boot'
 
 module RackAppWithCapybara
   class << self
-    @app = nil
+
+    @@initializers = []
+
+    def register_to_init(initializer)
+      @@initializers << initializer
+    end
 
     def application
-      @app ||= Rack::Builder.new do
+      @app ||= Rack::Builder.new do |builder|
         use Rack::ServerPages do |config|
           config.view_path = 'app/views'
+
+          @@initializers.each do |initializer|
+            initializer.init(RackAppWithCapybara.env, config)
+          end
+        end
+
+        @@initializers.each do |initializer|
+          initializer.middleware(builder)
         end
 
         run Rack::ServerPages::NotFound
@@ -40,3 +53,7 @@ end
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*RackAppWithCapybara.groups)
+
+Dir["./config/initializers/*.rb"].each do |initializer|
+  require initializer
+end
