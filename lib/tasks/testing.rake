@@ -2,6 +2,8 @@ require 'rake/testtask'
 
 desc "Runs all tests in test folder"
 Rake::TestTask.new do |t|
+  ENV['RACK_ENV'] = 'test'
+
   t.libs = [
     File.realpath('.'),
     File.realpath('test/'),
