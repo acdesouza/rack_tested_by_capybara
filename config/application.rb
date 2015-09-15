@@ -20,7 +20,7 @@ module RackAppWithCapybara
         end
 
         @@initializers.each do |initializer|
-          initializer.middleware(builder)
+          initializer.middleware(RackAppWithCapybara.env, builder)
         end
 
         run Rack::ServerPages::NotFound
@@ -45,7 +45,7 @@ module RackAppWithCapybara
 
     def groups
       env = RackAppWithCapybara.env
-      groups = [:default, env]
+      groups = [:default, :assets, env]
     end
   end
 end
@@ -53,6 +53,10 @@ end
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*RackAppWithCapybara.groups)
+
+Dir["./config/decorators/*.rb"].each do |decorator|
+  require decorator
+end
 
 Dir["./config/initializers/*.rb"].each do |initializer|
   require initializer

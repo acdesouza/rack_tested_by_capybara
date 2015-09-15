@@ -7,6 +7,10 @@ ruby '2.2.3'
 gem 'rake'
 gem 'rack-server-pages'
 
+group :assets do
+  gem 'sprockets'
+end
+
 group :development, :test do
   gem 'minitest'
   gem 'capybara'
