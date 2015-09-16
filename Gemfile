@@ -9,6 +9,8 @@ gem 'rack-server-pages'
 
 group :assets do
   gem 'sprockets'
+  gem 'sass'
+  gem 'compass'
 end
 
 group :development, :test do
