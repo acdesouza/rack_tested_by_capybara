@@ -8,6 +8,7 @@ namespace :assets do
   task :compile_js do
     # TODO: JSHint
 
+    Sprocketfier::Middleware.logger = Logger.new(STDOUT)
     asset     = Sprocketfier::Middleware.sprockets['application.js']
 
     outpath   = "public/assets/javascripts"
@@ -22,6 +23,7 @@ namespace :assets do
   end
 
   task :compile_css do
+    Sprocketfier::Middleware.logger = Logger.new(STDOUT)
     asset     = Sprocketfier::Middleware.sprockets['application.css']
 
     outpath   = "public/assets/stylesheets"

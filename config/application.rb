@@ -11,16 +11,18 @@ module RackAppWithCapybara
 
     def application
       @app ||= Rack::Builder.new do |builder|
+        use Rack::CommonLogger, RackAppWithCapybara.logger unless RackAppWithCapybara.env.test?
+
         use Rack::ServerPages do |config|
           config.view_path = 'app/views'
 
           @@initializers.each do |initializer|
-            initializer.init(RackAppWithCapybara.env, config)
+            initializer.init(RackAppWithCapybara, config)
           end
         end
 
         @@initializers.each do |initializer|
-          initializer.middleware(RackAppWithCapybara.env, builder)
+          initializer.middleware(RackAppWithCapybara, builder)
         end
 
         run Rack::ServerPages::NotFound
@@ -41,6 +43,25 @@ module RackAppWithCapybara
       end
 
       rack_env
+    end
+
+    def logger
+      @@app_logger ||= Logger.new(STDOUT)
+      @@app_logger.level = self.log_level
+
+      @@app_logger
+    end
+
+    def log_level
+      level_config = {
+        production: Logger::WARN,
+        test: Logger::WARN
+      }
+      if level_config.include?(self.env.to_sym)
+        level_config[self.env.to_sym]
+      else
+        Logger::DEBUG
+      end
     end
 
     def groups
