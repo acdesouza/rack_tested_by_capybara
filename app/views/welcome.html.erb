@@ -1,9 +1,6 @@
 <h1 id="greeting">Welcome!</h1>
 
-<label for="user[name]">User name: </label>
-<input type="text" id="user_name" name="user[name]" value="" />
-
-<input type="button" id="hello" value="Hello!"/>
+<%= partial 'welcome_form' %>
 
 <%= javascript_include_tag %>
 <%= stylesheets_link_tag %>

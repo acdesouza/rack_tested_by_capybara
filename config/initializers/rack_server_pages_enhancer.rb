@@ -1,0 +1,1 @@
+RackAppWithCapybara.register_to_init(RackServerPageEnhancer)

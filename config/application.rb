@@ -22,7 +22,7 @@ module RackAppWithCapybara
         end
 
         @@initializers.each do |initializer|
-          initializer.middleware(RackAppWithCapybara, builder)
+          initializer.middleware(RackAppWithCapybara, builder) if initializer.respond_to? :middleware
         end
 
         run Rack::ServerPages::NotFound
